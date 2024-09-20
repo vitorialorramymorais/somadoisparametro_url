@@ -10,13 +10,13 @@ const port = 3000;
 const server = http.createServer((req, res) => {
   // Instruções de configuração do servidor (navegador)
   res.statusCode = 200; // status ok
-  res.setHeader("Content-Type", "text/plain; charset=utf-8"); // tipo do conteúdo
+  res.setHeader("Content-Type", "text/html; charset=utf-8"); // tipo do conteúdo
 
   let q = url.parse(req.url, true).query; // Consultando a string da URL
 
   // Obtendo os parâmetros como strings
-  const num1 = q.num1; // Primeiro número
-  const num2 = q.num2; // Segundo número
+  let num1 = q.num1; // Primeiro número
+  let num2 = q.num2; // Segundo número
 
   // Realizando a soma como string
   const resultado = num1 + num2; // Isso resultará em concatenação de strings
