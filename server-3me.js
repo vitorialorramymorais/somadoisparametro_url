@@ -14,10 +14,12 @@ const server = http.createServer((req, res) => {
 
   let q = url.parse(req.url, true).query; // Consultando a string da URL
 
-  // Obtendo os parâmetros e realizando a soma
-  const num1 = parseFloat(q.num1); // Primeiro número
-  const num2 = parseFloat(q.num2); // Segundo número
-  const resultado = num1 + num2; // Realizando a soma
+  // Obtendo os parâmetros como strings
+  const num1 = q.num1; // Primeiro número
+  const num2 = q.num2; // Segundo número
+
+  // Realizando a soma como string
+  const resultado = num1 + num2; // Isso resultará em concatenação de strings
 
   // Montagem da mensagem de retorno (template string)
   let txt = `
